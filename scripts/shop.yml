@@ -1,0 +1,23 @@
+- text: Welcome foreign
+  set:
+    first_time: true
+  load_sprite: shopkeeper
+
+- text: Welcome Back
+  when_not: first_time
+
+- text: Do you want a sword
+  when_not: first_time
+  input:
+    _yes:
+      - clear: true
+
+      - load_sprites: 
+          - shopkeeper
+          - sword
+        text: Here it is
+    _no:
+      - clear: true
+      
+      - load_sprite: shopkeeper-wtf
+        text: Ok your adventure is finished
